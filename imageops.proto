@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package imageops;
+
+service ImageOps {
+  rpc Add(AddRequest) returns (AddReply);
+  rpc RawImage(ImageBytes) returns (ImageInfo);
+  rpc JsonImage(ImageBytes) returns (ImageInfo);
+  rpc DotProduct(VectorPair) returns (DotReply);
+}
+
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message AddReply {
+  int32 sum = 1;
+}
+
+message ImageBytes {
+  bytes data = 1;
+}
+
+message ImageInfo {
+  int32 width = 1;
+  int32 height = 2;
+}
+
+message VectorPair {
+  repeated float a = 1;
+  repeated float b = 2;
+}
+
+message DotReply {
+  float dot = 1;
+}
