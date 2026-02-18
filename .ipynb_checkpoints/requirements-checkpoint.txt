@@ -1,6 +1,0 @@
-flask
-requests
-jsonpickle
-grpcio
-grpcio-tools
-pillow
